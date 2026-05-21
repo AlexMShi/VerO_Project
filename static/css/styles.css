@@ -47,6 +47,61 @@ main {
 .navbar-brand,.nav-link{color:var(--text)}
 .navbar-brand{font-weight:700;letter-spacing:.09em}
 .nav-link:hover,.navbar-brand:hover{color:var(--olive-deep)}
+.user-register-link{
+  min-width:156px;
+  min-height:66px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:.75rem;
+  padding:.25rem .35rem .25rem .8rem;
+  color:var(--text);
+  text-decoration:none;
+  border:1px solid transparent;
+  border-radius:.65rem;
+}
+.user-register-link:hover,
+.user-register-link:focus{
+  color:var(--olive-deep);
+  background:rgba(255,255,255,.24);
+  border-color:rgba(93,88,75,.35);
+}
+.user-register-copy{
+  display:grid;
+  line-height:1.15;
+  font-size:1rem;
+}
+.user-profile-mark{
+  width:58px;
+  height:64px;
+  position:relative;
+  display:block;
+  flex:none;
+  border:2px solid rgba(93,88,75,.4);
+  border-radius:.7rem;
+  background:rgba(255,255,255,.3);
+  overflow:hidden;
+}
+.user-profile-head{
+  width:23px;
+  height:23px;
+  position:absolute;
+  top:6px;
+  left:50%;
+  border-radius:50%;
+  background:var(--olive-deep);
+  transform:translateX(-50%);
+}
+.user-profile-body{
+  width:44px;
+  height:28px;
+  position:absolute;
+  bottom:4px;
+  left:50%;
+  border-radius:52% 52% .1rem .1rem;
+  background:var(--olive-deep);
+  transform:translateX(-50%);
+}
 .page-hero{
   min-height:calc(100vh - 72px - 88px);
   display:flex;
@@ -81,6 +136,14 @@ main {
 }
 .btn-soft:hover,.btn-soft:focus{background:var(--cream);color:var(--text)}
 .panel,.choice-card,.rating-panel{
+  border:1px solid rgba(93,88,75,.35);
+  border-radius:2rem;
+  background:#fff;
+  box-shadow:0 1rem 2.5rem rgba(51,49,47,.08);
+}
+.user-register-panel{
+  max-width:760px;
+  padding:clamp(1.5rem,4vw,3rem);
   border:1px solid rgba(93,88,75,.35);
   border-radius:2rem;
   background:#fff;
@@ -201,6 +264,11 @@ main {
 @media(max-width:768px){
   .keyword-list{grid-template-columns:1fr}
   .display-title,.section-title,.mock-title{letter-spacing:.04em}
+  .user-register-link{
+    min-width:0;
+    justify-content:flex-start;
+    padding-left:0;
+  }
 }
 .submission-note{border-left:.35rem solid var(--olive-deep);background:var(--cream)}
 .new-review-badge{display:inline-block;font-size:.8rem;background:var(--olive-dark);color:#fff;border-radius:999px;padding:.15rem .65rem;margin-left:.5rem}
@@ -292,7 +360,6 @@ select:focus-visible,
   background: var(--olive);
   color: var(--text);
 }
-
 .programme-result-link {
   display: block;
   color: var(--text);

@@ -1,0 +1,70 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Register | Ver·O</title>
+    <meta name="description" content="Create a Ver·O user account.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    {% include "partials/site-header.html" %}
+
+<main id="main-content">
+      <section class="page-hero soft-hero py-5">
+        <article class="container">
+          <section class="user-register-panel mx-auto">
+            <header class="mb-4">
+              <h1 class="section-title mb-2">Create User Account</h1>
+              <p class="mb-0">Register to keep your ratings and profile details together.</p>
+            </header>
+
+            <form class="row g-3" action="{% url 'submitted' %}" method="post" aria-label="User registration form">
+              {% csrf_token %}
+              <article class="col-md-6">
+                <label class="form-label" for="user-first-name">First name</label>
+                <input id="user-first-name" class="form-control" name="first_name" type="text" autocomplete="given-name" required>
+              </article>
+              <article class="col-md-6">
+                <label class="form-label" for="user-last-name">Last name</label>
+                <input id="user-last-name" class="form-control" name="last_name" type="text" autocomplete="family-name" required>
+              </article>
+              <article class="col-12">
+                <label class="form-label" for="user-email">Email</label>
+                <input id="user-email" class="form-control" name="email" type="email" autocomplete="email" required>
+              </article>
+              <article class="col-md-6">
+                <label class="form-label" for="user-password">Password</label>
+                <input id="user-password" class="form-control" name="password" type="password" autocomplete="new-password" minlength="8" required>
+              </article>
+              <article class="col-md-6">
+                <label class="form-label" for="user-password-confirm">Confirm password</label>
+                <input id="user-password-confirm" class="form-control" name="password_confirm" type="password" autocomplete="new-password" minlength="8" required>
+              </article>
+              <article class="col-12 d-flex flex-wrap gap-3 align-items-center pt-2">
+                <button class="btn btn-brand rounded-pill px-5" type="submit">Create Account</button>
+                <a class="btn btn-soft rounded-pill px-4" href="{% url 'home' %}">Back to Home</a>
+              </article>
+            </form>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer py-4">
+      <section class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2026 Ver·O. webpage prototype created by Mingyuan &amp; Mengxue</p>
+        <nav aria-label="Footer navigation">
+          <a class="footer-link me-3" href="{% url 'contact' %}#contact">Contact</a>
+          <a class="footer-link me-3" href="{% url 'contact' %}#imprint">Imprint</a>
+          <a class="footer-link" href="{% url 'contact' %}#sources">Image sources</a>
+        </nav>
+      </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

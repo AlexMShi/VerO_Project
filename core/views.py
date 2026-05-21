@@ -56,6 +56,10 @@ def register(request):
     return render(request, "register.html")
 
 
+def user_register(request):
+    return render(request, "user-register.html")
+
+
 def submitted(request):
     return render(request, "submitted.html")
 

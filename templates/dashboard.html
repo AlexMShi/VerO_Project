@@ -12,29 +12,9 @@
 
     <body>
         <a class="skip-link" href="#main-content">Skip to main content</a>
+    {% include "partials/site-header.html" %}
 
-        <header>
-            <nav class="navbar navbar-expand-lg site-navbar sticky-top" aria-label="Main navigation">
-                <section class="container-fluid px-4">
-                    <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">Ver·O</a>
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <section class="collapse navbar-collapse" id="mainNav">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'school_search' %}">Pick School</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact & Imprint</a></li>
-                        </ul>
-                    </section>
-                </section>
-            </nav>
-        </header>
-
-        <main id="main-content">
+<main id="main-content">
             <section class="py-5 bg-cream text-center">
                 <article class="container">
                     <h1 class="display-5 section-title">Ver·O Dashboard</h1>
